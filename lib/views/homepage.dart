@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
+import 'package:foodie_app/utilities/slides.dart';
 import '../utilities/tiles.dart';
 import '../utilities/tilesTwo.dart';
 
@@ -148,23 +148,9 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 50.0,
-              child: ListView.builder(
-                itemCount: 5,
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (context, index) => Container(
-                  width: 134.0,
-                  decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                    color: Color(0xFFFF7700),
-                  ),
-                  margin: const EdgeInsets.symmetric(horizontal: 10.0),
-                  child: Center(
-                    child: Text('Card $index'),
-                  ),
-                ),
-              ),
+              child: Slides(),
             ),
             Padding(
               padding: const EdgeInsets.fromLTRB(16.0, 32.0, 16.0, 40.0),
