@@ -4,8 +4,15 @@ import 'package:foodie_app/utilities/slides.dart';
 import '../utilities/tiles.dart';
 import '../utilities/tilesTwo.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +23,8 @@ class HomePage extends StatelessWidget {
         child: AppBar(
           systemOverlayStyle: const SystemUiOverlayStyle(
             // Status bar brightness (optional)
-            statusBarIconBrightness: Brightness.dark, // For Android (dark icons)
+            statusBarIconBrightness:
+                Brightness.dark, // For Android (dark icons)
             statusBarBrightness: Brightness.dark, // For iOS (dark icons)
           ),
           backgroundColor: Colors.transparent,
@@ -97,14 +105,17 @@ class HomePage extends StatelessWidget {
                             scale: 2.0,
                           ),
                         ),
-                        contentPadding: const EdgeInsets.symmetric(vertical: 5.0),
+                        contentPadding:
+                            const EdgeInsets.symmetric(vertical: 5.0),
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8.0),
-                          borderSide: const BorderSide(color: Colors.transparent),
+                          borderSide:
+                              const BorderSide(color: Colors.transparent),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8.0),
-                          borderSide: const BorderSide(color: Colors.transparent),
+                          borderSide:
+                              const BorderSide(color: Colors.transparent),
                         ),
                       ),
                     ),
@@ -130,8 +141,7 @@ class HomePage extends StatelessWidget {
                               style: TextStyle(
                                   fontWeight: FontWeight.w600,
                                   fontSize: 15.0,
-                                  color: Colors.black
-                              ),
+                                  color: Colors.black),
                             ),
                             const SizedBox(
                               width: 4.0,
@@ -181,6 +191,29 @@ class HomePage extends StatelessWidget {
             ),
           ],
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: currentIndex,
+        onTap: (index) => setState(() => currentIndex = index),
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home_filled),
+            label: 'Home',
+            backgroundColor: Colors.blue,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.favorite_border),
+            label: 'Favorites',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.history),
+            label: 'History',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.shopping_cart_outlined),
+            label: 'Cart',
+          ),
+        ],
       ),
     );
   }
