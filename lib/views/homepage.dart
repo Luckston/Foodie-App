@@ -163,7 +163,7 @@ class _HomePageState extends State<HomePage> {
               child: Slides(),
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(16.0, 32.0, 16.0, 40.0),
+              padding: const EdgeInsets.fromLTRB(16.0, 32.0, 16.0, 27.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: const [
@@ -192,28 +192,47 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: currentIndex,
-        onTap: (index) => setState(() => currentIndex = index),
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home_filled),
-            label: 'Home',
-            backgroundColor: Colors.blue,
+      bottomNavigationBar: Container(
+        decoration: const BoxDecoration(
+          border: Border(
+            top: BorderSide(
+              color: Color(0xFFB0ACAC),
+            ),
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.favorite_border),
-            label: 'Favorites',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.history),
-            label: 'History',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_cart_outlined),
-            label: 'Cart',
-          ),
-        ],
+        ),
+        child: BottomNavigationBar(
+          backgroundColor: Colors.white,
+          type: BottomNavigationBarType.fixed,
+          selectedItemColor: const Color(0xFFFF7700),
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+          currentIndex: currentIndex,
+          onTap: (index) => setState(() => currentIndex = index),
+          items: const [
+            BottomNavigationBarItem(
+              icon: ImageIcon(
+                AssetImage('assets/homeLogo.png'),
+                size: 20.0,
+              ),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.favorite_border),
+              label: 'Favorites',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.history),
+              label: 'History',
+            ),
+            BottomNavigationBarItem(
+              icon: ImageIcon(
+                AssetImage('assets/cartLogo.png'),
+                size: 20.0,
+              ),
+              label: 'Cart',
+            ),
+          ],
+        ),
       ),
     );
   }

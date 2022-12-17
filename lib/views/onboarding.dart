@@ -20,6 +20,7 @@ class _OnBoardingState extends State<OnBoarding> {
 
   @override
   void initState() {
+    super.initState();
     // super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       SystemChrome.setSystemUIOverlayStyle(overlayStyle);
@@ -38,21 +39,21 @@ class _OnBoardingState extends State<OnBoarding> {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(0.0),
+          preferredSize: const Size.fromHeight(0.0),
           child: AppBar(
-            systemOverlayStyle: SystemUiOverlayStyle(
+            systemOverlayStyle: const SystemUiOverlayStyle(
               // Status bar brightness (optional)
               statusBarIconBrightness: Brightness.light, // For Android (dark icons)
               statusBarBrightness: Brightness.light, // For iOS (dark icons)
             ),
             backgroundColor: Colors.transparent,
-            foregroundColor: Color(0xFF484848),
+            foregroundColor: const Color(0xFF484848),
             elevation: 0,
           ),
         ),
         body: Column(
           children: [
-            Expanded(
+            const Expanded(
               flex: 4,
               child: SizedBox(),
             ),
@@ -69,14 +70,14 @@ class _OnBoardingState extends State<OnBoarding> {
                         Text(
                           'Foodie',
                           style: GoogleFonts.poppins(
-                            textStyle: TextStyle(
+                            textStyle: const TextStyle(
                               color: Colors.white,
                               fontSize: 44.0,
                               fontWeight: FontWeight.w800,
                             ),
                           ),
                         ),
-                        Text(
+                        const Text(
                           'We deliver tasty meals to your doorstep',
                           style: TextStyle(
                             color: Colors.white,
@@ -91,20 +92,20 @@ class _OnBoardingState extends State<OnBoarding> {
                       width: 235.0,
                       child: TextButton(
                         onPressed: () => Navigator.pushNamed(context, homePage),
+                        style: TextButton.styleFrom(
+                          backgroundColor: const Color(0xFFFF7700),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12.0),
+                          ),
+                        ),
                         child: Text(
                           'Get Started',
                           style: GoogleFonts.montserrat(
-                            textStyle: TextStyle(
+                            textStyle: const TextStyle(
                               color: Colors.white,
                               fontSize: 16.0,
                               fontWeight: FontWeight.w600,
                             ),
-                          ),
-                        ),
-                        style: TextButton.styleFrom(
-                          backgroundColor: Color(0xFFFF7700),
-                          shape: new RoundedRectangleBorder(
-                            borderRadius: new BorderRadius.circular(12.0),
                           ),
                         ),
                       ),
@@ -113,7 +114,7 @@ class _OnBoardingState extends State<OnBoarding> {
                 ),
               ),
             ),
-            Expanded(
+            const Expanded(
               flex: 1,
               child: SizedBox(),
             ),
