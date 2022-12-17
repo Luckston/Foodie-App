@@ -193,6 +193,7 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       bottomNavigationBar: Container(
+        height: 60.0,
         decoration: const BoxDecoration(
           border: Border(
             top: BorderSide(
