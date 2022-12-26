@@ -31,7 +31,7 @@ class FoodView extends StatelessWidget {
                 padding: const EdgeInsets.fromLTRB(16.0, 42.0, 16.0, 26.81),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
-                  children: const [Icon(Icons.favorite_border)],
+                  children: const [Icon(Icons.favorite_border, color: Color(0x8C000000))],
                 ),
               ),
               Image.asset('assets/jellof.png'),
