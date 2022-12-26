@@ -7,6 +7,7 @@ class Slides extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       scrollDirection: Axis.horizontal,
+      clipBehavior: Clip.none,
       children: [
         const SizedBox(width: 16.0),
         buildSlides(
@@ -37,30 +38,38 @@ class Slides extends StatelessWidget {
     required title,
   }) =>
       Container(
-          padding: const EdgeInsets.symmetric(horizontal: 4.0),
-          width: 134.0,
-          decoration: const BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(8.0)),
-            color: Color(0xFFFF7700),
-          ),
-          child: Row(
-            children: [
-              Image.asset(
-                urlImage,
-                height: 45.0,
-                width: 45.0,
-              ),
-              const SizedBox(width: 4.0),
-              Flexible(
-                child: Text(
-                  title,
-                  style: const TextStyle(
-                    fontSize: 14.0,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.white,
-                  ),
+        padding: const EdgeInsets.symmetric(horizontal: 4.0),
+        width: 134.0,
+        decoration: const BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(8.0)),
+          color: Color(0xFFFF7700),
+          boxShadow: [
+            BoxShadow(
+              color: Color(0x3DBB895A),
+              blurRadius: 4.0,
+              offset: Offset(0.0, 4.0),
+            ),
+          ],
+        ),
+        child: Row(
+          children: [
+            Image.asset(
+              urlImage,
+              height: 45.0,
+              width: 45.0,
+            ),
+            const SizedBox(width: 4.0),
+            Flexible(
+              child: Text(
+                title,
+                style: const TextStyle(
+                  fontSize: 14.0,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.white,
                 ),
               ),
-            ],
-          ));
+            ),
+          ],
+        ),
+      );
 }

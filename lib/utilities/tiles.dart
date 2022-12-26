@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../routes/route.dart';
+
 class Tiles extends StatelessWidget {
   const Tiles({Key? key}) : super(key: key);
 
@@ -11,12 +13,15 @@ class Tiles extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Expanded(
-            child: buildContainer(
-              context: context,
-              urlImage: 'assets/popularOne.png',
-              title: 'Jellof Rice and Chicken',
-              price: '₦800',
-            ),
+            child: InkWell(
+              onTap: () => Navigator.pushNamed(context, foodView),
+              child: buildContainer(
+                context: context,
+                urlImage: 'assets/popularOne.png',
+                title: 'Jellof Rice and Chicken',
+                price: '₦800',
+              ),
+            )
           ),
           const SizedBox(width: 20.0),
           Expanded(

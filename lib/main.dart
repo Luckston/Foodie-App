@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:foodie_app/views/homePage.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '/routes/route.dart' as route;
 
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
         )
       ),
       debugShowCheckedModeBanner: false,
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const HomePage(),
       onGenerateRoute: route.controller,
       initialRoute: route.onBoarding,
     );

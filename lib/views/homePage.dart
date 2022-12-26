@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:foodie_app/utilities/slides.dart';
-import '../utilities/tiles.dart';
-import '../utilities/tilesTwo.dart';
+import '/utilities/slides.dart';
+import '/utilities/tiles.dart';
+import '/utilities/tilesTwo.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
