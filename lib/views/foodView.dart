@@ -219,26 +219,20 @@ class FoodView extends StatelessWidget {
                 borderRadius: BorderRadius.all(Radius.circular(8.0)),
                 color: Color(0xFF921616),
               ),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    ImageIcon(
-                      AssetImage('assets/cartLogo.png'),
-                      size: 20.0,
-                      color: Colors.white,
-                    ),
-                    SizedBox(width: 11.0),
-                    Text(
-                      'Add to cart',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16.0,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ],
+              child: TextButton.icon(
+                onPressed: () {},
+                icon: const ImageIcon(
+                  AssetImage('assets/cartLogo.png'),
+                  size: 20.0,
+                  color: Colors.white,
+                ),
+                label: const Text(
+                  'Add to cart',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16.0,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               ),
             ),
