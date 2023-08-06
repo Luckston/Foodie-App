@@ -9,31 +9,43 @@ class FoodView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(0.0),
-        child: AppBar(
-          systemOverlayStyle: const SystemUiOverlayStyle(
-            // Status bar brightness (optional)
-            statusBarIconBrightness:
-                Brightness.dark, // For Android (dark icons)
-            statusBarBrightness: Brightness.dark, // For iOS (dark icons)
-          ),
-          backgroundColor: Colors.transparent,
-          elevation: 0,
+      appBar: AppBar(
+        systemOverlayStyle: const SystemUiOverlayStyle(
+          // Status bar brightness (optional)
+          statusBarIconBrightness: Brightness.dark, // For Android (dark icons)
+          statusBarBrightness: Brightness.dark, // For iOS (dark icons)
         ),
+        title: Text('Order'),
+        centerTitle: true,
+        backgroundColor: Colors.transparent,
+        foregroundColor: Colors.black,
+        elevation: 0,
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(
+              Icons.favorite_border,
+              color: Color(0x8C000000),
+            ),
+            onPressed: () {
+              // do something
+            },
+          )
+        ],
       ),
       body: Container(
         padding: const EdgeInsets.only(bottom: 88.0),
         child: SingleChildScrollView(
           child: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.fromLTRB(16.0, 42.0, 16.0, 26.81),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: const [Icon(Icons.favorite_border, color: Color(0x8C000000))],
-                ),
-              ),
+              // Padding(
+              //   padding: const EdgeInsets.fromLTRB(16.0, 42.0, 16.0, 26.81),
+              //   child: Row(
+              //     mainAxisAlignment: MainAxisAlignment.end,
+              //     children: const [
+              //       Icon(Icons.favorite_border, color: Color(0x8C000000))
+              //     ],
+              //   ),
+              // ),
               Image.asset('assets/jellof.png'),
               Padding(
                 padding: const EdgeInsets.fromLTRB(16.0, 58.0, 16.0, 45.0),

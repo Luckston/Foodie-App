@@ -42,14 +42,14 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   Row(
                     children: [
-                      Image.asset(
-                        'assets/foodieMenu.png',
-                        height: 14.0,
-                        width: 21.0,
-                      ),
-                      const SizedBox(width: 24.0),
+                      // Image.asset(
+                      //   'assets/foodieMenu.png',
+                      //   height: 14.0,
+                      //   width: 21.0,
+                      // ),
+                      // const SizedBox(width: 24.0),
                       const Text(
-                        'Hi Peace 👋',
+                        'Good Morning ☀',
                         style: TextStyle(
                           fontWeight: FontWeight.w700,
                           fontSize: 20.0,
