@@ -14,6 +14,17 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int currentIndex = 0;
 
+  String greeting() {
+    var hour = DateTime.now().hour;
+    if (hour < 12) {
+      return 'morning ⛅';
+    }
+    if (hour < 17) {
+      return 'afternoon ☀';
+    }
+    return 'evening 🌙';
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,9 +59,9 @@ class _HomePageState extends State<HomePage> {
                       //   width: 21.0,
                       // ),
                       // const SizedBox(width: 24.0),
-                      const Text(
-                        'Good Morning ☀',
-                        style: TextStyle(
+                      Text(
+                        'Good ${greeting()}',
+                        style: const TextStyle(
                           fontWeight: FontWeight.w700,
                           fontSize: 20.0,
                         ),
