@@ -21,7 +21,7 @@ class Tiles extends StatelessWidget {
                 title: 'Jellof Rice and Chicken',
                 price: '₦800',
               ),
-            )
+            ),
           ),
           const SizedBox(width: 20.0),
           Expanded(

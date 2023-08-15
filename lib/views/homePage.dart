@@ -59,16 +59,16 @@ class _HomePageState extends State<HomePage> {
                       //   width: 21.0,
                       // ),
                       // const SizedBox(width: 24.0),
-                      Text(
-                        'Good ${greeting()}',
-                        style: const TextStyle(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 20.0,
+                      Expanded(
+                        child: Text(
+                          'Good ${greeting()}',
+                          style: const TextStyle(
+                            fontWeight: FontWeight.w700,
+                            fontSize: 20.0,
+                          ),
                         ),
                       ),
-                      const Expanded(
-                        child: SizedBox(),
-                      ),
+                      const SizedBox(),
                       const Icon(
                         Icons.notifications_none,
                         size: 28.0,
@@ -135,11 +135,13 @@ class _HomePageState extends State<HomePage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const Text(
-                        'Explore Categories',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 18.0,
+                      const Expanded(
+                        child: Text(
+                          'Explore Categories',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w700,
+                            fontSize: 18.0,
+                          ),
                         ),
                       ),
                       GestureDetector(
