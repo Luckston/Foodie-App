@@ -2,8 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class FoodView extends StatelessWidget {
+class FoodView extends StatefulWidget {
   const FoodView({Key? key}) : super(key: key);
+
+  @override
+  State<FoodView> createState() => _FoodViewState();
+}
+
+class _FoodViewState extends State<FoodView> {
+  bool isChecked = false;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +22,7 @@ class FoodView extends StatelessWidget {
           statusBarIconBrightness: Brightness.dark, // For Android (dark icons)
           statusBarBrightness: Brightness.dark, // For iOS (dark icons)
         ),
-        title: Text('Order'),
+        title: const Text('Order'),
         centerTitle: true,
         backgroundColor: Colors.transparent,
         foregroundColor: Colors.black,
@@ -23,11 +30,13 @@ class FoodView extends StatelessWidget {
         actions: <Widget>[
           IconButton(
             icon: Icon(
-              Icons.favorite_border,
-              color: Color(0x8C000000),
+              isChecked ? Icons.favorite : Icons.favorite_border,
+              color: isChecked ? Colors.red : const Color(0x8C000000),
             ),
             onPressed: () {
-              // do something
+              setState(() {
+                isChecked = !isChecked;
+              });
             },
           )
         ],

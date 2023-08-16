@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import '../routes/route.dart';
 
 class Tiles extends StatelessWidget {
@@ -13,19 +12,18 @@ class Tiles extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Expanded(
-            child: InkWell(
+            child: buildContainer(
               onTap: () => Navigator.pushNamed(context, foodView),
-              child: buildContainer(
-                context: context,
-                urlImage: 'assets/popularOne.png',
-                title: 'Jellof Rice and Chicken',
-                price: '₦800',
-              ),
+              context: context,
+              urlImage: 'assets/popularOne.png',
+              title: 'Jellof Rice and Chicken',
+              price: '₦800',
             ),
           ),
           const SizedBox(width: 20.0),
           Expanded(
             child: buildContainer(
+              onTap: () {},
               context: context,
               urlImage: 'assets/popularTwo.png',
               title: 'Croissant',
@@ -42,55 +40,62 @@ class Tiles extends StatelessWidget {
     required String urlImage,
     required title,
     required price,
+    required onTap,
   }) =>
       Stack(
         alignment: Alignment.bottomRight,
         children: [
-          Container(
-            // height: 180.0,
-            constraints: const BoxConstraints(minHeight: 180.0),
-            decoration: const BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(10.0)),
-              color: Color(0xFFFCECDE),
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(10.0),
-                  child: Image.asset(
-                    urlImage,
-                    height: 102.0,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(4.0, 16.0, 4.0, 24.0),
+          Material(
+            color: const Color(0xFFFCECDE),
+            borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+            child: InkWell(
+              onTap: onTap,
+              borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+              child: Ink(
+                child: Container(
+                  constraints: const BoxConstraints(minHeight: 180.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        title,
-                        style: const TextStyle(
-                          fontSize: 14.0,
-                          fontWeight: FontWeight.w600,
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(10.0),
+                        child: Image.asset(
+                          urlImage,
+                          height: 102.0,
+                          fit: BoxFit.cover,
                         ),
                       ),
-                      const SizedBox(height: 4.0),
-                      Text(
-                        price,
-                        style: GoogleFonts.lexend(
-                          textStyle: const TextStyle(
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.w400,
-                            color: Color(0xFFB71C1C),
-                          ),
+                      Padding(
+                        padding:
+                            const EdgeInsets.fromLTRB(4.0, 16.0, 4.0, 24.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              title,
+                              style: const TextStyle(
+                                fontSize: 14.0,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            const SizedBox(height: 4.0),
+                            Text(
+                              price,
+                              style: GoogleFonts.lexend(
+                                textStyle: const TextStyle(
+                                  fontSize: 14.0,
+                                  fontWeight: FontWeight.w400,
+                                  color: Color(0xFFB71C1C),
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ],
                   ),
                 ),
-              ],
+              ),
             ),
           ),
           Padding(
