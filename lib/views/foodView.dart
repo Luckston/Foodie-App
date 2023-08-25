@@ -11,6 +11,23 @@ class FoodView extends StatefulWidget {
 
 class _FoodViewState extends State<FoodView> {
   bool isChecked = false;
+  int counterValue = 0;
+
+  void incrementCounter() {
+    if (counterValue < 10) {
+      setState(() {
+        counterValue++;
+      });
+    }
+  }
+
+  void decrementCounter() {
+    if (counterValue > 0) {
+      setState(() {
+        counterValue--;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -92,13 +109,16 @@ class _FoodViewState extends State<FoodView> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Image.asset(
-                                  'assets/subtract.png',
-                                  height: 16.0,
-                                  width: 16.0,
+                                InkWell(
+                                  onTap: decrementCounter,
+                                  child: Image.asset(
+                                    'assets/subtract.png',
+                                    height: 16.0,
+                                    width: 16.0,
+                                  ),
                                 ),
                                 Text(
-                                  '1',
+                                  '$counterValue',
                                   style: GoogleFonts.lexend(
                                     textStyle: const TextStyle(
                                       color: Colors.white,
@@ -107,10 +127,13 @@ class _FoodViewState extends State<FoodView> {
                                     ),
                                   ),
                                 ),
-                                Image.asset(
-                                  'assets/addition.png',
-                                  height: 16.0,
-                                  width: 16.0,
+                                InkWell(
+                                  onTap: incrementCounter,
+                                  child: Image.asset(
+                                    'assets/addition.png',
+                                    height: 16.0,
+                                    width: 16.0,
+                                  ),
                                 ),
                               ],
                             ),

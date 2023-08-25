@@ -45,15 +45,16 @@ class Tiles extends StatelessWidget {
       Stack(
         alignment: Alignment.bottomRight,
         children: [
-          Material(
-            color: const Color(0xFFFCECDE),
-            borderRadius: const BorderRadius.all(Radius.circular(10.0)),
-            child: InkWell(
-              onTap: onTap,
+          Container(
+            constraints: const BoxConstraints(minHeight: 180.0),
+            child: Material(
+              color: const Color(0xFFFCECDE),
               borderRadius: const BorderRadius.all(Radius.circular(10.0)),
-              child: Ink(
-                child: Container(
-                  constraints: const BoxConstraints(minHeight: 180.0),
+              child: InkWell(
+                onTap: onTap,
+                borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+                splashColor: Colors.grey,
+                child: Ink(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
