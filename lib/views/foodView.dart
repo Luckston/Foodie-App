@@ -81,11 +81,13 @@ class _FoodViewState extends State<FoodView> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Text(
-                          'Jellof Rice and Chicken',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w700,
-                            fontSize: 20.0,
+                        const Expanded(
+                          child: Text(
+                            'Jellof Rice and Chicken',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w700,
+                              fontSize: 20.0,
+                            ),
                           ),
                         ),
                         Container(
@@ -108,13 +110,16 @@ class _FoodViewState extends State<FoodView> {
                                 const EdgeInsets.symmetric(horizontal: 8.0),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 InkWell(
                                   onTap: decrementCounter,
-                                  child: Image.asset(
-                                    'assets/subtract.png',
-                                    height: 16.0,
-                                    width: 16.0,
+                                  child: Icon(
+                                    Icons.remove,
+                                    color: (counterValue == 0)
+                                        ? Colors.white70
+                                        : Colors.white,
+                                    size: 14.0,
                                   ),
                                 ),
                                 Text(
@@ -129,10 +134,12 @@ class _FoodViewState extends State<FoodView> {
                                 ),
                                 InkWell(
                                   onTap: incrementCounter,
-                                  child: Image.asset(
-                                    'assets/addition.png',
-                                    height: 16.0,
-                                    width: 16.0,
+                                  child: Icon(
+                                    Icons.add,
+                                    color: (counterValue == 10)
+                                        ? Colors.white70
+                                        : Colors.white,
+                                    size: 14.0,
                                   ),
                                 ),
                               ],
