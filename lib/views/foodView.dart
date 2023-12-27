@@ -250,42 +250,47 @@ class _FoodViewState extends State<FoodView> {
               ),
             ),
             color: Colors.white),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              '₦800',
-              style: GoogleFonts.lexend(
-                textStyle: const TextStyle(
-                  color: Color(0xFFB71C1C),
-                  fontSize: 32.0,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-            ),
-            Container(
-              height: 44.19,
-              width: 208.0,
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                color: Color(0xFF921616),
-              ),
-              child: TextButton.icon(
-                onPressed: () {},
-                icon: const ImageIcon(
-                  AssetImage('assets/cartLogo.png'),
-                  size: 20.0,
-                  color: Colors.white,
-                ),
-                label: const Text(
-                  'Add to cart',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.w600,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  '₦800',
+                  style: GoogleFonts.lexend(
+                    textStyle: const TextStyle(
+                      color: Color(0xFFB71C1C),
+                      fontSize: 32.0,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
                 ),
-              ),
+                Container(
+                  height: 44.19,
+                  width: 208.0,
+                  decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                    color: Color(0xFF921616),
+                  ),
+                  child: TextButton.icon(
+                    onPressed: () {},
+                    icon: const ImageIcon(
+                      AssetImage('assets/cartLogo.png'),
+                      size: 20.0,
+                      color: Colors.white,
+                    ),
+                    label: const Text(
+                      'Add to cart',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ],
         ),

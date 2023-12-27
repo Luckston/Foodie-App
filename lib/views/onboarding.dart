@@ -11,7 +11,6 @@ class OnBoarding extends StatefulWidget {
 }
 
 class _OnBoardingState extends State<OnBoarding> {
-
   static const SystemUiOverlayStyle overlayStyle = SystemUiOverlayStyle(
     systemNavigationBarColor: Colors.black,
     systemNavigationBarIconBrightness: Brightness.light,
@@ -29,12 +28,10 @@ class _OnBoardingState extends State<OnBoarding> {
 
   @override
   Widget build(BuildContext context) {
-    // SystemChrome.setSystemUIOverlayStyle(overlayStyle);
     return Container(
       decoration: const BoxDecoration(
         image: DecorationImage(
-            image: AssetImage("assets/foodieOnboard.png"),
-            fit: BoxFit.cover),
+            image: AssetImage("assets/foodieOnboard.png"), fit: BoxFit.cover),
       ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
@@ -43,7 +40,8 @@ class _OnBoardingState extends State<OnBoarding> {
           child: AppBar(
             systemOverlayStyle: const SystemUiOverlayStyle(
               // Status bar brightness (optional)
-              statusBarIconBrightness: Brightness.light, // For Android (dark icons)
+              statusBarIconBrightness:
+                  Brightness.light, // For Android (dark icons)
               statusBarBrightness: Brightness.light, // For iOS (dark icons)
             ),
             backgroundColor: Colors.transparent,
@@ -91,7 +89,8 @@ class _OnBoardingState extends State<OnBoarding> {
                       height: 44.0,
                       width: 235.0,
                       child: TextButton(
-                        onPressed: () => Navigator.pushNamed(context, homePage),
+                        onPressed: () =>
+                            Navigator.pushNamed(context, landingPage),
                         style: TextButton.styleFrom(
                           backgroundColor: const Color(0xFFFF7700),
                           shape: RoundedRectangleBorder(
